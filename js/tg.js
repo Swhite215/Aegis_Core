@@ -140,10 +140,6 @@ function main(o, data) {
         .call(rect)
       .append("title")
         .text(function(d) { return d.key + " (" + formatNumber(d.value) + ")"; });
-    // children.append("text")
-    //     .attr("class", "ctext")
-    //     .text(function(d) { return d.key; })
-    //     .call(text2);
 
     g.append("rect")
         .attr("class", "parent")
@@ -156,10 +152,6 @@ function main(o, data) {
 
     t.append("tspan")
         .text(function(d) { return d.key;});
-
-    // t.append("tspan")
-    //     .attr("dy", "1.0em")
-    //     .text(function(d) { return formatNumber(d.value); });
 
     if (d._children[0]._children[0].key === "Joxos") {
       g.append("image")
@@ -185,19 +177,12 @@ function main(o, data) {
         .text(function(d) { return "Mana: " + d._children[0].mana; });
     }
 
-
-    //Code for displaying percentages
-    // t.append("tspan")
-    //     .attr("dy", "1.0em")
-    //     .text(function(d) { return formatPercentage(d.parent.value/d.value) + "% " + formatNumber(d.value) + " out of " + formatNumber(d.parent.value);});
-
     t.call(text);
 
     g.selectAll("rect")
         .style("fill", function(d) { return color(d.key); });
 
     function transition(d) {
-      // debugger;
       //Don't transition if at lowest nest depth.
       if (d._children[0]._children ===  undefined) {
         return;
