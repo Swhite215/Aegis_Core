@@ -224,8 +224,37 @@ function main(o, data) {
       });
     }
 
+    checkState();
     return g;
   }
+
+
+  function checkState() {
+    state = jQuery(".grandparent").text().trim();
+
+    if (state === "Key Components") {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606942/whole_map_no_selection_CT_tkptc5.png');
+    } else if (state.indexOf("Ecric") > -1) {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606941/whole_map_ecric_selection_CT_eyy52a.png');
+    }  else if (state.indexOf("Vi Citadel") > -1) {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606941/whole_map_citadel_selection_CT_azvvr0.png');
+    }  else if (state.indexOf("Elgin") > -1) {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606941/whole_map_elgin_selection_CT_gnd2v5.png');
+    }  else if (state.indexOf("Herl") > -1) {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606941/whole_map_herl_selection_CT_u4mmvn.png');
+    }  else if (state.indexOf("Mundi Forest") > -1) {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606941/whole_map_mundi_selection_CT_oi34s8.png');
+    }  else if (state.indexOf("Hope's Haven") > -1) {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606941/whole_map_hope_selection_CT_pdvjlm.png');
+    }  else if (state.indexOf("Northern Reaches") > -1) {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606942/whole_map_northern_selection_CT_xbmfzf.png');
+    }  else if (state.indexOf("Stiel") > -1) {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606942/whole_map_stiel_selection_CT_ymp3vo.png');
+    } else {
+      jQuery(".section-01").attr('src' , 'http://res.cloudinary.com/debrs2fke/image/upload/v1508606942/whole_map_no_selection_CT_tkptc5.png');
+    }
+  }
+
 
   function text(text) {
     text.selectAll("tspan")
@@ -276,7 +305,7 @@ var defaults = {
     format: ",d", //Format for Numbers
     title: "", //Empty value to be filled in later.
     width: 1000, //Width of the graph
-    height: 700 //Height of the graph
+    height: 680 //Height of the graph
 };
 
 if (window.location.hash === "") {
